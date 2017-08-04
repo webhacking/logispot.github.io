@@ -4,10 +4,23 @@ layout: default
 
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header intro">
+  <header class="post-header intro" style="background: url({{ page.image }}) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
     <div class="intro-in">
-      <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-      <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+      <h1 class="post-title" itemprop="name headline">
+          {{ page.title }}
+      </h1>
+      <p class="post-meta">
+          <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+              {{ page.date | date: "%b %-d, %Y" }}
+          </time>
+          {% if page.author %} •
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span itemprop="name">
+                  {{ page.author }}
+              </span>
+          </span>
+          {% endif %}
+      </p>
     </div>
   </header>
 
