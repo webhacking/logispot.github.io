@@ -1,0 +1,45 @@
+destination: _blog
+sass:
+  sass_dir: _sass
+  style: expanded
+
+timezone: Asia/Seoul
+url: https://logispot.github.io
+
+permalink: /:year/:month/:day/:title/
+markdown    : kramdown
+highlighter : pygments
+
+krandown:
+  input: GFM
+  highlighter: rouge
+
+title: Logispot
+description: "Logispot Tech Blog"
+keywords: "Logistics"
+
+
+baseurl: ""
+
+collections:
+  authors:
+    output: true
+    permalink: /authors/:path/
+  tags:
+    output: true
+    permalink: /tags/:path/
+
+author:
+  name      : Logispot
+  job       : IT / Logistics
+  bio       : "Description Here"
+  thumb     : /images/author.jpg
+  email     : develop@truckup.kr
+  url       : https://www.truckup.kr
+  github    : https://github.com/Logispot
+
+# google_analytics: UA-52446115-1
+repo: http://github.com/logispot/logispot.github.io
+
+# comments
+disqus_shortname: "Logispot"

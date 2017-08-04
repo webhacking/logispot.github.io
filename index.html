@@ -1,0 +1,96 @@
+---
+layout: default
+title: Blog
+subtitle: Where Smart Logistics Happens. Here is the story of Logispot
+---
+
+<style>
+
+.post-header.intro .intro-video-area {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.post-header.intro .intro-video-dim {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.46);
+    z-index: 1
+}
+.post-header.intro .intro-video {
+    position: relative;
+    width: 100%;
+    height: 100%
+}
+.post-header.intro .intro-video>video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.author-image>img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    z-index: 33;
+    border-radius: 100%;
+    border: 1px solid #b9b9b9;
+}
+</style>
+<section class="post-list">
+
+  <header class="post-header intro">
+    <!--[if (gt IE 9)|!(IE)]><!-->
+    <div class="intro-video-area">
+        <div class="intro-video-dim">
+        </div>
+        <div class="intro-video">
+            <video autoplay loop="" muted="" preload="metadata" crossorigin="anonymous">
+                <source src="/assets/videos/truck.mp4" type="video/mp4">
+                    <source src="/assets/videos/truck.webm" type="video/webm">
+            </video>
+        </div>
+    </div>
+    <!--<![endif]-->
+    <div class="intro-in">
+      <h1 class="post-title">{{ page.title }}</h1>
+      {% if page.subtitle %}
+        <h2 class="intro-subtitle">{{ page.subtitle }}</h2>
+      {% endif %}
+    </div>
+  </header>
+
+  {% for post in site.posts %}
+    <article class="post-item container">
+      <header style="position: relative;">
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <h1 class="post-title">
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h1>
+        <div class="author-info">
+            {% assign author = site.authors | where: 'name', post.author | first %}
+            <span class="author-name">
+	               {{ author.title }}
+            </span>
+            <span class="author-image">
+                <img src="{{ author.image }}" />
+            </span>
+        </div>
+      </header>
+      <p>
+          {{ post.content | strip_html | truncatewords: 56 }}
+          <a href="{{ post.url | prepend: site.baseurl }}" title="Permalink to: {{ post.title }}" class="read-more">
+              Read more
+          </a>
+      </p>
+    </article>
+  {% endfor %}
+</section>
