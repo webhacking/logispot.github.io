@@ -4,7 +4,7 @@ title: 'Campus Recruiting Day For Developers'
 author: hax0r.woo
 date: 2017-08-04 14:00
 tags: [storage]
-image: /files/images/hax0r.jpg
+image: /files/images/team.jpg
 ---
 
 반가워요!
