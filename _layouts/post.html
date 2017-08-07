@@ -1,31 +1,44 @@
 ---
 layout: default
 ---
+<style>
+.intro-dim {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+}
 
+</style>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header intro" style="background: url({{ page.image }}) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
-    <div class="intro-in">
-      <h1 class="post-title" itemprop="name headline">
-          {{ page.title }}
-      </h1>
-      <p class="post-meta">
-          <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-              {{ page.date | date: "%b %-d, %Y" }}
-          </time>
-          {% if page.author %} •
-          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-              <span itemprop="name">
-                  {{ page.author }}
-              </span>
-          </span>
-          {% endif %}
-      </p>
-    </div>
-  </header>
+    <header class="post-header intro" style="background: url({{ page.image }}) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+        <div class="intro-dim">
 
-  <div class="post-content container" itemprop="articleBody">
-    {{ content }}
-  </div>
+        </div>
+        <div class="intro-in">
+            <h1 class="post-title" itemprop="name headline">
+                {{ page.title }}
+            </h1>
+            <p class="post-meta">
+                <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                    {{ page.date | date: "%b %-d, %Y" }}
+                </time>
+                {% if page.author %} •
+                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <span itemprop="name">
+                    {{ page.author }}
+                    </span>
+                </span>
+                {% endif %}
+            </p>
+        </div>
+    </header>
+
+    <div class="post-content container" itemprop="articleBody">
+        {{ content }}
+    </div>
 
 </article>
